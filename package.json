@@ -1,4 +1,5 @@
 {
+  "homepage": "https://wolfgunblood.github.io/weather-app",
   "name": "weather-app",
   "private": true,
   "version": "0.0.0",
@@ -7,10 +8,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "dotenv -e .env.production vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "framer-motion": "^10.12.4",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.62.1",
